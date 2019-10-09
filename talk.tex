@@ -1,17 +1,18 @@
 \documentclass[10pt]{beamer}
-
-\usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
-
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
-
 \usepackage{pgfplots}
-\usepgfplotslibrary{dateplot}
-
 \usepackage{xspace}
-\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\usepackage{xcolor}
+\usepackage{caption}
 
+\usetheme[progressbar=frametitle]{metropolis}
+\usepgfplotslibrary{dateplot}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\captionsetup[figure]{labelformat=empty}
+
+% ---------------------------------------------------------
 \title{Artificial astrocyte networks}
 % \subtitle{A modern beamer theme}
 % \date{\today}
@@ -39,10 +40,13 @@
 % ---------------------------------------------------------
 \section[ANNs]{What are artificial neural networks?}
 \begin{frame}[fragile]{What are ANNs?}
-A reductionist approach.
+\begin{itemize}
+\item By example.
+\item Sparse networks.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Digit recognition.}
+\begin{frame}[fragile]{Classic example: visual digit recognition.}
 \begin{columns}
 \column{0.5\textwidth}
 \centering
@@ -53,14 +57,43 @@ A reductionist approach.
 \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Nine recognition.}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[scale=4]{images/nine.png} 
+\end{figure}
+\column{0.5\textwidth}
+\centering
+ $= 9$
+\end{columns}
+\end{frame}
+
 \begin{frame}[fragile]{Digit recognition.}
 \begin{columns}
 \column{0.5\textwidth}
-\centering
-\includegraphics[scale=2]{images/nine.png} 
+\begin{figure}
+    \centering
+    \includegraphics[scale=4]{images/ninepixeled.png} 
+\end{figure}
 \column{0.5\textwidth}
 \centering
- = 9
+ $ $
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Digit recognition.}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[scale=4]{images/nine.png} 
+    \caption{\textbf{x}}
+\end{figure}
+\column{0.5\textwidth}
+\centering
+ $= 9$
 \end{columns}
 \end{frame}
 
@@ -71,27 +104,7 @@ A reductionist approach.
 \includegraphics[scale=2]{images/nine.png} 
 \column{0.5\textwidth}
 \centering
- = 9
-\end{columns}
-\end{frame}
-\begin{frame}[fragile]{Digit recognition.}
-\begin{columns}
-\column{0.5\textwidth}
-\centering
-\includegraphics[scale=2]{images/nine.png} 
-\column{0.5\textwidth}
-\centering
- = 9
-\end{columns}
-\end{frame}
-\begin{frame}[fragile]{Digit recognition.}
-\begin{columns}
-\column{0.5\textwidth}
-\centering
-\includegraphics[scale=2]{images/nine.png} 
-\column{0.5\textwidth}
-\centering
- = 9
+ $\sum x_{ij} = 9$
 \end{columns}
 \end{frame}
 
@@ -159,13 +172,51 @@ $|F(x) - f(x)| < \epsilon$
 
 % ---------------------------------------------------------
 \section[In practice.]{Practice.}
- 
+\begin{frame}[fragile]{Astrocyte layers.}
+\begin{itemize}
+    \item Spread
+    \item Gather
+    \item Slide
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A fundamental limit?}
+\begin{itemize}
+\item Width requires depth.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Results.}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{images/results.png} 
+    % \caption{Classification accuracy.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Conclusions.}
+\begin{itemize}
+\item AANs $\rightarrow$ universal function approximator.
+\item AANs can solve hard vision problems.
+\item An \alert{upper bound} for the performance of real astrocytes? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Open science.}
+\begin{itemize}
+\item[Code] \url{github.com/CoAxLab/glia_playing_atari}
+\item[Talk] \url{github.com/parenthetical-e/glia-talk-sfn-2019}
+\item[] 
+\item[] \alert{Thank you!}
+\end{itemize}
+\end{frame}
+
 
 % ---------------------------------------------------------
-\begin{frame}[allowframebreaks]{References}
-  \bibliography{demo}
-  \bibliographystyle{abbrv}
-\end{frame}
+% \begin{frame}[allowframebreaks]{References}
+%   \bibliography{demo}
+%   \bibliographystyle{abbrv}
+% \end{frame}
 
 % ---------------------------------------------------------
 \end{document}
