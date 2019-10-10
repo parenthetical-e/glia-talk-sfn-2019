@@ -114,11 +114,11 @@
 \begin{frame}[fragile]{Basic astrocyte properties}
 \begin{itemize}
     \item $[Ca^{2+}]$ dynamics
-    \item Glia transmission
+    \item Gliotransmission
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Assumption 1.}
+\begin{frame}[fragile]{Assumption 1 ($\phi$).}
 \begin{itemize}
     \item $[Ca^{2+}]$ dynamics $\leftrightarrow$ firing rate
 \end{itemize}
@@ -140,13 +140,13 @@
 
 \begin{frame}[fragile]{Assumption 2 ($w_i$).}
 \begin{itemize}
-    \item Learned $[Ca^{2+}]$-dependent release
-    \item Directional
+    \item \alert{Directional} $[Ca^{2+}]$-dependent gliotransmission.
+    \item 
 \end{itemize}
 \end{frame}
 \begin{frame}[fragile]{Assumption 3 ($\sum$).}
 \begin{itemize}
-    \item Directional $[Ca^{2+}]$ waves
+    \item \alert{Directional} $[Ca^{2+}]$ waves, driven by gliotransmission.
 \end{itemize}
 \end{frame}
 
@@ -154,9 +154,10 @@
 \section[In theory.]{Theory.}
 \begin{frame}[fragile]{Computational calcium waves.}
 \begin{itemize}
+\item Let's treat neurons only as a source of input; glia do all the computation!
 \item Let's study a forward moving $[Ca^{2+}]$ wave.
-\item (With Assumptions 1-3)
 \item \alert{Prove}: it is a universal function approximator.
+\item (With Assumptions 1-3)
 \end{itemize}
 \end{frame}
 
@@ -164,36 +165,139 @@
 $|F(x) - f(x)| < \epsilon$
 \end{frame}
 
-\begin{frame}[fragile]{Proof sketch.}
+\begin{frame}[fragile]{A universal function approximator?}
+$|\alert{F}(x) - f(x)| < \epsilon$
 \begin{itemize}
-\item Astrocyte Sudoku
+    \item[$\alert{F}(x)$] : any target function (whose domain is bounded)
 \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A universal function approximator?}
+$|\alert{F}(x) - f(x)| < \epsilon$
+\begin{itemize}
+    \item[$\alert{F}(x)$] : visual recognition system in cat (target)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A universal function approximator?}
+$|F(x) - \alert{f}(x)| < \epsilon$ 
+\begin{itemize}
+\item[$F(x)$] : visual recognition system in cat (\textit{target})\\
+\item[$\alert{f}(x)$] : an ANN (\textit{approximator})
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A universal function approximator?}
+$|F(x) - f(x)| < \alert{\epsilon}$ 
+\begin{itemize}
+\item[$F(x)$] : visual recognition system in cat (\textit{target})\\
+\item[$f(x)$] : an ANN (\textit{approximator})
+\item[$\alert{\epsilon}$] : the max error boundary
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A universal function approximator?}
+$|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$ 
+\begin{itemize}
+\item[] It is possible the target $\alert{F}$ and learned function $\alert{f}$ can be made arbitrarily close to $\alert{\epsilon}$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Proof sketch.}
+\begin{columns}
+\column{0.5\textwidth}
+\centering
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.2]{images/ann.png}
+    \caption{
+    \begin{itemize}
+        \item Bölcskei \textit{et al} (2019) proved $F$ can be approximated by $f$ in $M < N$ connections.
+    \end{itemize}}
+\end{figure}
+\column{0.5\textwidth}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Proof sketch.}
+\begin{columns}
+\column{0.5\textwidth}
+\centering
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.2]{images/ann.png}
+    \caption{
+    \begin{itemize}
+        \item Bölcskei \textit{et al} (2019) proved $F$ can be approximated by $f$ in $M < N$ connections.
+    \end{itemize}}
+\end{figure}
+\column{0.5\textwidth}
+\centering
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.2]{images/aan.png} 
+    \caption{
+    \begin{itemize}
+        \item Approximation of the universal approximator
+        \item \alert{Astrocyte Sudoku}
+    \end{itemize}}
+\end{figure}
+\end{columns}
 \end{frame}
 
 % ---------------------------------------------------------
 \section[In practice.]{Practice.}
-\begin{frame}[fragile]{Astrocyte layers.}
-\begin{itemize}
-    \item Spread
+\begin{frame}[fragile]{Three astrocyte layers.}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{enumerate}
     \item Gather
     \item Slide
-\end{itemize}
+    \item Spread
+\end{enumerate}
+\column{0.5\textwidth}
+\centering
+\includegraphics[scale=0.25]{images/layers.png} 
+\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{A fundamental limit?}
+
+\begin{columns}
+\column{0.5\textwidth}
 \begin{itemize}
-\item Width requires depth.
+    \item For astrocyte computation \alert{width requires depth}.
 \end{itemize}
+\column{0.5\textwidth}
+\centering
+\includegraphics[scale=0.5]{images/glaidim.png} 
+\end{columns}
+
 \end{frame}
 
 \begin{frame}[fragile]{Results.}
 \begin{figure}
+\begin{columns}
+\column{0.4\textwidth}
+    \begin{itemize}
+        \item Task: MINST digits
+        \begin{enumerate}
+            \item VAE, $N=(784,20)$
+            \item Perceptron, $N=(20,30,10)$    
+        \end{enumerate}
+        \item Loss: Cross-entropy
+        \item Optimizer: ADAM
+    \end{itemize}
+\column{0.6\textwidth}
     \centering
-    \includegraphics[scale=0.5]{images/results.png} 
-    % \caption{Classification accuracy.}
+    \includegraphics[scale=0.4]{images/results.png} 
+\end{columns}
 \end{figure}
 \end{frame}
 
+% ---------------------------------------------------------
+\section[Conclusions.]{Conclusions.}
 \begin{frame}[fragile]{Conclusions.}
 \begin{itemize}
 \item AANs $\rightarrow$ universal function approximator.
