@@ -184,6 +184,7 @@ $|F(x) - \alert{f}(x)| < \epsilon$
 \begin{itemize}
 \item[$F(x)$] : visual recognition system in cat (\textit{target})\\
 \item[$\alert{f}(x)$] : an ANN (\textit{approximator})
+% \item[] : $\phi (\sum w_{ij} x_{ij} + b_i)$
 \end{itemize}
 \end{frame}
 
@@ -192,6 +193,7 @@ $|F(x) - f(x)| < \alert{\epsilon}$
 \begin{itemize}
 \item[$F(x)$] : visual recognition system in cat (\textit{target})\\
 \item[$f(x)$] : an ANN (\textit{approximator})
+% \item[] : $\phi (\sum w_{ij} x_{ij} + b_i)$
 \item[$\alert{\epsilon}$] : the max error boundary
 \end{itemize}
 \end{frame}
@@ -213,7 +215,8 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \includegraphics[scale=0.2]{images/ann.png}
     \caption{
     \begin{itemize}
-        \item Bölcskei \textit{et al} (2019) proved $F$ can be approximated by $f$ in $M < N$ connections.
+        \item Bölcskei \textit{et al} (2019) $F$ can be approximated by $f$ in $M < N$ connections.
+        \item $f$ : $\phi (\sum w_{ij} x_{ij} + b_i)$
     \end{itemize}}
 \end{figure}
 \column{0.5\textwidth}
@@ -230,6 +233,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \caption{
     \begin{itemize}
         \item Bölcskei \textit{et al} (2019) proved $F$ can be approximated by $f$ in $M < N$ connections.
+        \item $f$ : $\phi (\sum^M w_{ij} x_{ij} + b_i)$
     \end{itemize}}
 \end{figure}
 \column{0.5\textwidth}
@@ -240,6 +244,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \caption{
     \begin{itemize}
         \item Approximation of the universal approximator
+        \item $w^o_{1,1} = \sum w_{i,j}^o$
         \item \alert{Astrocyte Sudoku}
     \end{itemize}}
 \end{figure}
@@ -263,7 +268,6 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \end{frame}
 
 \begin{frame}[fragile]{A fundamental limit?}
-
 \begin{columns}
 \column{0.5\textwidth}
 \begin{itemize}
