@@ -232,7 +232,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \includegraphics[scale=0.2]{images/ann.png}
     \caption{
     \begin{itemize}
-        \item Bölcskei \textit{et al} (2019) proved $F$ can be approximated by $f$ in $M < N$ connections.
+        \item Bölcskei \textit{et al} (2019) $F$ can be approximated by $f$ in $M < N$ connections.
         \item $f$ : $\phi (\sum^M w_{ij} x_{ij} + b_i)$
     \end{itemize}}
 \end{figure}
@@ -277,27 +277,29 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \centering
 \includegraphics[scale=0.5]{images/glaidim.png} 
 \end{columns}
+\end{frame}
 
+\begin{frame}[fragile]{Methods.}
+\begin{itemize}
+    \item Task: MINST digits
+    \begin{enumerate}
+        \item VAE, $N=(784,20)$
+        \item Perceptron, $N=(20,30,10)$    
+    \end{enumerate}
+    \item Loss: Cross-entropy
+    \item Optimizer: ADAM
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Results.}
-\begin{figure}
 \begin{columns}
 \column{0.4\textwidth}
-    \begin{itemize}
-        \item Task: MINST digits
-        \begin{enumerate}
-            \item VAE, $N=(784,20)$
-            \item Perceptron, $N=(20,30,10)$    
-        \end{enumerate}
-        \item Loss: Cross-entropy
-        \item Optimizer: ADAM
-    \end{itemize}
+    \centering
+    \includegraphics[scale=0.2]{images/minst.png} 
 \column{0.6\textwidth}
     \centering
-    \includegraphics[scale=0.4]{images/results.png} 
+    \includegraphics[scale=0.3]{images/results.png} 
 \end{columns}
-\end{figure}
 \end{frame}
 
 % ---------------------------------------------------------
@@ -307,6 +309,14 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \item AANs $\rightarrow$ universal function approximator.
 \item AANs can solve hard vision problems.
 \item An \alert{upper bound} for the performance of real astrocytes? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Future work.}
+\begin{itemize}
+\item Upper bound $\rightarrow$ biological upper bound (\alert{help})
+\item Recurrent waves (in collaboration)
+\item Better motivated tasks (\alert{help})
 \end{itemize}
 \end{frame}
 
