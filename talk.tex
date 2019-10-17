@@ -24,16 +24,16 @@
 \begin{document}
 \maketitle
 
-\begin{frame}{Table of contents.}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents%[hideallsubsections]
-\end{frame}
+% \begin{frame}{Table of contents.}
+%   \setbeamertemplate{section in toc}[sections numbered]
+%   \tableofcontents%[hideallsubsections]
+% \end{frame}
 
 % ---------------------------------------------------------
-\section[]{Goal.}
 \begin{frame}[fragile]{Goal}
 \begin{itemize}
-    \item Use models and proof methods from artificial intelligence to try and set an \alert{upper bound} on astrocyte computation.
+    \item Use models and proof methods from artificial neural networks to try and set an \alert{upper bound} on astrocyte computation.
+    \item ANNs $\leftrightarrow$ AANs?
 \end{itemize}
 \end{frame}
 
@@ -140,20 +140,27 @@
 \begin{itemize}
     \item No synapses
     \item No axons 
+    \item No spikes
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Basic astrocyte limits.}
 \begin{itemize}
+    \item No spatial $\sum$
     \item No $w_i$
-    \item No $\sum$
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Basic astrocyte properties}
 \begin{itemize}
     \item $[Ca^{2+}]$ dynamics
-    \item Gliotransmission
+    \item $[Ca^{2+}]$ dependent gliotransmission
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Recovering \{$\phi, w_i, \sum $\}?}
+\begin{itemize}
+    \item Let's make three assumptions that let us form a functional analogy between neurons and astrocytes.
 \end{itemize}
 \end{frame}
 
@@ -183,6 +190,10 @@
 \begin{frame}[fragile]{Assumption 3 ($\sum$).}
 \begin{itemize}
     \item \alert{Directional} $[Ca^{2+}]$ waves, driven by gliotransmission.
+    \begin{itemize}
+    \item Axons send spikes across a spatial distances with fidelity.
+    \item A $[Ca^{2+}]$ wave can travel a spatial distance with fidelity.
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -198,25 +209,25 @@
 \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator?}
-$|F(x) - f(x)| < \epsilon$
+$F(x) - f(x)$
 \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator?}
-$|\alert{F}(x) - f(x)| < \epsilon$
+$\alert{F}(x) - f(x)$
 \begin{itemize}
     \item[$\alert{F}(x)$] : any target function (whose domain is bounded)
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator?}
-$|\alert{F}(x) - f(x)| < \epsilon$
+$\alert{F}(x) - f(x)$
 \begin{itemize}
     \item[$\alert{F}(x)$] : visual recognition system in cat (target)
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator?}
-$|F(x) - \alert{f}(x)| < \epsilon$ 
+$F(x) - \alert{f}(x)$ 
 \begin{itemize}
 \item[$F(x)$] : visual recognition system in cat (\textit{target})\\
 \item[$\alert{f}(x)$] : an ANN (\textit{approximator})
@@ -292,11 +303,15 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \begin{frame}[fragile]{Three astrocyte layers.}
 \begin{columns}
 \column{0.5\textwidth}
+\begin{itemize}
+\item In PyTorch I implemented three kinds of astrocyte layers.
+\item \alert{Using only} nearest neighbor connections.
 \begin{enumerate}
     \item Gather
     \item Slide
     \item Spread
 \end{enumerate}
+\end{itemize}
 \column{0.5\textwidth}
 \centering
 \includegraphics[scale=0.25]{images/layers.png} 
@@ -306,7 +321,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \begin{frame}[fragile]{An astrocyte network.}
 \begin{figure}
     \centering
-    \includegraphics[scale=0.35]{images/glaidim.png} 
+    \includegraphics[scale=0.4]{images/glaidim.png} 
     \caption{
     \begin{itemize}
         \item Two equivilant neural (\textit{left}) and astrocyte networks (\textit{right}).
@@ -342,13 +357,20 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Results.}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.2]{images/leak.png} 
+    \caption{Effect of gliotransmitter diffusion on model performance}
+\end{figure}
+\end{frame}
 % ---------------------------------------------------------
 \section[Conclusions.]{Conclusions.}
 \begin{frame}[fragile]{Conclusions.}
 \begin{itemize}
 \item AANs $\rightarrow$ universal function approximator.
-\item AANs can solve hard vision problems.
 \item An \alert{upper bound} for the performance of real astrocytes? 
+\item AANs can solve hard vision problems.
 \end{itemize}
 \end{frame}
 
