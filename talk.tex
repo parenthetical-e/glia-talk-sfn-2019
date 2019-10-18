@@ -369,22 +369,12 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 
 % ---------------------------------------------------------
 \section[In practice.]{Practice.}
-\begin{frame}[fragile]{Three astrocyte layers.}
-\begin{columns}
-\column{0.5\textwidth}
-\begin{itemize}
-\item In PyTorch I implemented three kinds of astrocyte layers.
-\item \alert{Using only} nearest neighbor connections.
-\begin{enumerate}
-    \item Gather
-    \item Slide
-    \item Spread
-\end{enumerate}
-\end{itemize}
-\column{0.5\textwidth}
+\begin{frame}[fragile]{Three kinds of astrocyte layers.}
+\begin{figure}
 \centering
-\includegraphics[scale=0.25]{images/layers.png} 
-\end{columns}
+\includegraphics[scale=0.3]{images/layers.png}     
+\caption{I tested three fundamental astrocyte wave types [in PyTorch].}
+\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{An astrocyte network.}
@@ -437,7 +427,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \section[Conclusions.]{Conclusions.}
 \begin{frame}[fragile]{Conclusions.}
 \begin{itemize}
-\item Astrocytes can compute any function, in theory.
+\item Artifical astrocytes can compute any function, in theory.
 \item An \alert{upper bound} for the performance of real astrocytes? 
 \item Our simple model $Ca^{2+}$ waves can solve hard vision problems, in practice.
 \end{itemize}
@@ -445,7 +435,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 
 \begin{frame}[fragile]{Future work.}
 \begin{itemize}
-\item Upper bound $\rightarrow$ biological upper bound (\alert{help})
+\item Artifical upper bound $\rightarrow$ biological upper bound (\alert{help})
 \item Recurrent waves (in collaboration)
 \item Better motivated tasks (\alert{help})
 \end{itemize}
