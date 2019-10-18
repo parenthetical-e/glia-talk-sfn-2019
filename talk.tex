@@ -30,20 +30,26 @@
 % \end{frame}
 
 % ---------------------------------------------------------
-\begin{frame}[fragile]{Astrocytes and cognition!?}
-\begin{itemize}
-    \item Classically astrocytes have been considered neural support cells.
-    \item Growing evidence that astrocytes can directly drive cognition and motor behavior.
-    \item \alert{Distributed $Ca^{2+}$ dynamics can do computation?}
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]{Astrocytes and cognition!?}
+% \begin{itemize}
+%     \item Classically astrocytes have been considered neural support cells.
+%     \item Growing evidence that astrocytes can directly drive cognition and motor behavior.
+    
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}[fragile]{Astrocytes and cognition.}
 \begin{figure}
     \centering
-    \includegraphics[scale=0.45]{images/mu.png} 
+    \includegraphics[scale=0.4]{images/mu.png} 
     \caption{Neural (\textit{top}) and astrocyte $[Ca^{2+}]$ dynamics (bottom) during frustrated movement. (Mu et al, \textit{Cell} 2019; Taken from Video S2.)}
 \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Astrocytes and cognition.}
+\begin{itemize}
+    \item Can astrocyte $[Ca^{2+}]$ dynamics do distributed computation?
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{A theory for astrocytes?}
@@ -52,7 +58,7 @@
     \includegraphics[scale=0.2]{images/agn.png} 
     \caption{
     \begin{itemize}
-        \item Very little theoretical study of astrocyte computation
+        \item Very little theoretical study of astrocyte computation.
         \item Focus is on neuron-glia interactions.
     \end{itemize}}
 \end{figure}
@@ -67,29 +73,29 @@
 \end{frame}
 
 % ---------------------------------------------------------
-\begin{frame}[fragile]{Goal.}
+\begin{frame}[fragile]{Goal of this talk.}
 \begin{itemize}
-    \item \alert{Develop a new theory for distributed astrocyte computation.}
+    \item Develop a new theory for distributed astrocyte computation.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Goal.}
-\begin{itemize}
-    \item So let's do a thought experiment. 
-    \item Using a simple model. 
-    \item ...Based on artificial neural networks (ANNs)?!
-    % \item Use models and proof methods from artificial neural networks to try and set an \alert{upper bound} on astrocyte computation.
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]{Goal.}
+% \begin{itemize}
+%     \item So let's do a thought experiment. 
+%     \item Using a simple model. 
+%     \item ...Based on artificial neural networks (ANNs)?!
+%     % \item Use models and proof methods from artificial neural networks to try and set an \alert{upper bound} on astrocyte computation.
+% \end{itemize}
+% \end{frame}
 
 % ---------------------------------------------------------
-\section[ANNs]{What are artificial neural networks?}
-\begin{frame}[fragile]{What are ANNs?}
-\begin{itemize}
-\item By example, using vision.
-\item Sparse networks.
-\end{itemize}
-\end{frame}
+\section[Artificial neural networks.]{What are artificial neural networks?}
+% \begin{frame}[fragile]{What are ANNs?}
+% \begin{itemize}
+% \item By example, using vision.
+% \item Sparse networks.
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}[fragile]{Visual digit recognition.}
 \begin{columns}
@@ -189,12 +195,12 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Basic astrocyte limits.}
-\begin{itemize}
-    \item No spatial $\sum$
-    \item No $w_i$
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]{Basic astrocyte limits.}
+% \begin{itemize}
+%     \item No spatial $\sum$
+%     \item No $w_i$
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}[fragile]{Basic astrocyte properties}
 \begin{itemize}
@@ -248,33 +254,33 @@
 \begin{itemize}
 \item Let's treat neurons only as a source of input; glia do all the computation!
 \item Let's study a forward moving $[Ca^{2+}]$ wave.
-\item With Assumptions 1-3\ldots
+\item With assumptions 1-3\ldots
 \item \alert{Prove}: our simple model of $[Ca^{2+}]$ waves is a universal function approximator.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{A universal function approximator?}
-$\alert{D} - f(x)$ 
-\begin{itemize}
-    \item[$\alert{D}$] : visual recognition system in fly (target)
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]{A universal function approximator?}
+% $\alert{D} - f(x)$ 
+% \begin{itemize}
+%     \item[$\alert{D}$] : visual recognition system in fly (target)
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile]{A universal function approximator?}
-$D - \alert{f}(x)$ 
-\begin{itemize}
-\item[$D$] : visual recognition system in fly (\textit{target})\\
-\item[$\alert{f}(x)$] : an ANN (\textit{approximator})
-% \item[] : $\phi (\sum w_{ij} x_{ij} + b_i)$
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]{A universal function approximator?}
+% $D - \alert{f}(x)$ 
+% \begin{itemize}
+% \item[$D$] : visual recognition system in fly (\textit{target})\\
+% \item[$\alert{f}(x)$] : an ANN (\textit{approximator})
+% % \item[] : $\phi (\sum w_{ij} x_{ij} + b_i)$
+% \end{itemize}
+% \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator.}
 $|D - f(x)| < \alert{\epsilon}$ 
 \begin{itemize}
 \item[$D$] : visual recognition system in fly (\textit{target})\\
 \item[$f(x)$] : an ANN (\textit{approximator})
-\item[$\alert{\epsilon}$] : the max error (a positive number)
+\item[$\alert{\epsilon}$] : the error (\textit{a positive number})
 \end{itemize}
 \end{frame}
 
