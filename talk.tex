@@ -254,46 +254,27 @@
 \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator?}
-$F(x) - f(x)$
-\end{frame}
-
-\begin{frame}[fragile]{A universal function approximator?}
-$\alert{F}(x) - f(x)$
+$\alert{D} - f(x)$ 
 \begin{itemize}
-    \item[$\alert{F}(x)$] : any target function (whose domain is bounded)
+    \item[$\alert{D}$] : visual recognition system in fly (target)
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{A universal function approximator?}
-$\alert{F}(x) - f(x)$
+$D - \alert{f}(x)$ 
 \begin{itemize}
-    \item[$\alert{F}(x)$] : visual recognition system in fly (target)
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{A universal function approximator?}
-$F(x) - \alert{f}(x)$ 
-\begin{itemize}
-\item[$F(x)$] : visual recognition system in fly (\textit{target})\\
+\item[$D$] : visual recognition system in fly (\textit{target})\\
 \item[$\alert{f}(x)$] : an ANN (\textit{approximator})
 % \item[] : $\phi (\sum w_{ij} x_{ij} + b_i)$
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{A universal function approximator?}
-$|F(x) - f(x)| < \alert{\epsilon}$ 
+\begin{frame}[fragile]{A universal function approximator.}
+$|D - f(x)| < \alert{\epsilon}$ 
 \begin{itemize}
-\item[$F(x)$] : visual recognition system in fly (\textit{target})\\
+\item[$D$] : visual recognition system in fly (\textit{target})\\
 \item[$f(x)$] : an ANN (\textit{approximator})
-% \item[] : $\phi (\sum w_{ij} x_{ij} + b_i)$
-\item[$\alert{\epsilon}$] : the max error boundary
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{A universal function approximator?}
-$|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$ 
-\begin{itemize}
-\item[] It is possible the target $\alert{F}$ and learned function $\alert{f}$ can be made arbitrarily close to $\alert{\epsilon}$.
+\item[$\alert{\epsilon}$] : the max error (a positive number)
 \end{itemize}
 \end{frame}
 
@@ -307,7 +288,9 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \includegraphics[scale=0.2]{images/ann.png}
     \caption{
     \begin{itemize}
-        \item Bölcskei \textit{et al} (2019) $F$ can be approximated by $f$ in $M << N$ connections.
+        \item $D$ can be approximated by $f$ in $M << N$ connections.
+        \item Bölcskei et al, \textit{J. Math. of Data Science} 2019.
+        \item Accept: $|D - f(x)| < \epsilon$ 
     \end{itemize}}
 \end{figure}
 \column{0.5\textwidth}
@@ -323,7 +306,9 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \includegraphics[scale=0.2]{images/ann.png}
     \caption{
     \begin{itemize}
-        \item Bölcskei \textit{et al} (2019) $F$ can be approximated by $f$ in $M << N$ connections.
+        \item $D$ can be approximated by $f$ in $M << N$ connections.
+        \item Bölcskei et al, \textit{J. Math. of Data Science} 2019.
+        \item Accept: $|D - f(x)| < \epsilon$ 
     \end{itemize}}
 \end{figure}
 \column{0.5\textwidth}
@@ -333,37 +318,21 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \includegraphics[scale=0.2]{images/aan.png} 
     \caption{
     \begin{itemize}
-        \item $\alert{w^o_{1,1} = \sum w_{i,j}^o}$
-        \item Astrocyte Sudoku.
-    \end{itemize}}
+        \item If summed ``weight'' of a $Ca^{2+}$ wave is the same as an axon.
+        \item Then the networks are equivalent.
+        \item Also accept: $|D - g(x)| < \epsilon$ 
+    \end{itemize}
+    }
 \end{figure}
 \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Proof sketch.}
-\begin{columns}
-\column{0.5\textwidth}
-\centering
 \begin{figure}
     \centering
-    \includegraphics[scale=0.2]{images/ann.png}
-    \caption{
-    \begin{itemize}
-        \item Bölcskei \textit{et al} (2019) $F$ can be approximated by $f$ in $M << N$ connections.
-    \end{itemize}}
+    \includegraphics[scale=0.3]{images/aan.png} 
+    \caption{\textbf{Astrocyte Sudoku.}}
 \end{figure}
-\column{0.5\textwidth}
-\centering
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.2]{images/aan.png} 
-    \caption{
-    \begin{itemize}
-        \item $w^o_{1,1} = \sum w_{i,j}^o$
-        \item \alert{Astrocyte Sudoku.}
-    \end{itemize}}
-\end{figure}
-\end{columns}
 \end{frame}
 
 
@@ -373,7 +342,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 \begin{figure}
 \centering
 \includegraphics[scale=0.3]{images/layers.png}     
-\caption{I tested three fundamental astrocyte wave types [in PyTorch].}
+\caption{I explored three fundamental kinds of astrocyte $Ca^{2+}$ waves [in PyTorch].}
 \end{figure}
 \end{frame}
 
@@ -383,7 +352,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
     \includegraphics[scale=0.4]{images/glaidim.png} 
     \caption{
     \begin{itemize}
-        \item Two equivilant neural (\textit{left}) and astrocyte networks (\textit{right}).
+        \item Two equivalent neural (\textit{left}) and astrocyte networks (\textit{right}).
         \item For astrocyte computation \alert{width requires depth}.
     \end{itemize}}
 \end{figure}
@@ -435,7 +404,7 @@ $|\alert{F}(x) - \alert{f}(x)| < \alert{\epsilon}$
 
 \begin{frame}[fragile]{Future work.}
 \begin{itemize}
-\item Artifical upper bound $\rightarrow$ biological upper bound (\alert{help})
+\item Artificial upper bound $\rightarrow$ biological upper bound (\alert{help})
 \item Recurrent waves (in collaboration)
 \item Better motivated tasks (\alert{help})
 \end{itemize}
