@@ -210,7 +210,7 @@
 
 \begin{frame}[fragile]{Recovering \{$\phi, w_i, \sum $\}?}
 \begin{itemize}
-    \item Let's make three assumptions that let us form a functional analogy between neurons and astrocytes.
+    \item Let's make four assumptions that let us form a functional analogy between neurons and astrocytes.
 \end{itemize}
 \end{frame}
 
@@ -247,13 +247,18 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Assumption 4 (locals only).}
+\begin{itemize}
+    \item Only nearest neighbor cells can communicate.
+\end{itemize}
+\end{frame}
+
 % ---------------------------------------------------------
 \section[In theory.]{Theory.}
 \begin{frame}[fragile]{Computational calcium waves.}
 \begin{itemize}
 \item Let's treat neurons only as a source of input; glia do all the computation!
-\item Let's study a forward moving $[Ca^{2+}]$ wave.
-\item With assumptions 1-3\ldots
+\item Let's study a forward moving $[Ca^{2+}]$ wave (Assump. 1-4).
 \item \alert{Prove}: our simple model of $[Ca^{2+}]$ waves is a universal function approximator.
 \end{itemize}
 \end{frame}
@@ -365,8 +370,8 @@ $|D - f(x)| < \alert{\epsilon}$
 
 \begin{frame}[fragile]{Methods.}
 \begin{itemize}
-    \item \alert{Task}: MINST digits
-    \item \alert{Use}: \{\textit{slide}, \textit{spread}, \textit{gather}\} in pytorch
+    \item Task: MINST digits
+    \item Use: \{\textit{slide}, \textit{spread}, \textit{gather}\} in pytorch
     \begin{enumerate}
         \item VAE, $N=(784,20)$
         \item Perceptron, $N=(20,30,10)$    
